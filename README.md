@@ -1,73 +1,193 @@
-# data-cleaning-and-eda-project
-# 📊 Data Cleaning and EDA Project
+# 🧹 Data Cleaning & Exploratory Data Analysis (EDA) on Global Layoffs Dataset
 
-This project involves **data cleaning and exploratory data analysis (EDA)** on a dataset containing global company layoffs from **March 2020 to March 2023**.  
-The work was done entirely using **MySQL** to practice real-world data wrangling, aggregation, and trend analysis skills.
-
----
-
-## 🧠 Project Overview
-
-The dataset originally came as an Excel file containing information about various companies, the number of employees laid off, and related business details.
-
-The goal of this project was to:
-1. **Clean and structure** the raw data to make it analysis-ready.  
-2. **Perform EDA** to uncover trends, patterns, and insights related to layoffs during 2020–2023.
+![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)
+![Made with MySQL](https://img.shields.io/badge/Made%20with-MySQL-blue.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/Aadityavarier/data-cleaning-and-eda-project)
+![GitHub stars](https://img.shields.io/github/stars/Aadityavarier/data-cleaning-and-eda-project?style=social)
 
 ---
 
-## 🗂️ Dataset Details
-
-| Column Name | Description |
-|--------------|-------------|
-| `company` | Name of the company |
-| `country` | Country where layoffs occurred |
-| `date` | Date of layoff event |
-| `sector` | Industry sector of the company |
-| `total_laid_off` | Total employees laid off |
-| `percentage_laid_off` | Percent of company workforce affected |
-| `location` | Specific location (city or region) |
-| `stage` | Company funding stage (e.g., Seed, Series A, Public) |
-| `funds_raised_millions` | Total funding raised (in millions) |
+## 📑 Table of Contents
+- [Project Overview](#project-overview)
+- [Dataset Information](#dataset-information)
+- [Data Cleaning Process](#data-cleaning-process)
+- [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+- [Key Insights](#key-insights)
+- [Usage](#usage)
+- [Example Queries](#example-queries)
+- [Repository Structure](#repository-structure)
+- [Sample Visualizations](#sample-visualizations)
+- [Future Improvements](#future-improvements)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author & Contact](#author--contact)
 
 ---
 
-## 🧹 Data Cleaning Steps
+## 📘 Project Overview
 
-Performed using **MySQL**:
-- Removed duplicates and null values.  
-- Standardized date and string formats.  
-- Handled missing values for `funds_raised_millions` and `percentage_laid_off`.  
-- Trimmed whitespaces and corrected inconsistent entries.  
-- Converted `date` column to proper `DATE` format for analysis.  
-- Created a cleaned version of the dataset for visualization and queries.
+This project focuses on **data cleaning and exploratory data analysis (EDA)** of a layoffs dataset covering global companies between **March 2020 – March 2023**.
+The raw Excel dataset was imported into **MySQL**, where all cleaning, transformation, and analysis were executed using SQL queries.
+
+---
+
+## 🗂️ Dataset Information
+
+- **Raw file:** `raw_layoffs.xlsx`
+- **Imported table:** `layoffs_staging2`
+- **Period covered:** 2020-03-11 → 2023-03-06
+
+**Columns:**
+
+| Column                  | Description                                     |
+| ----------------------- | ----------------------------------------------- |
+| `company`               | Name of the company                             |
+| `country`               | Country of operation                            |
+| `date`                  | Layoff announcement date                        |
+| `sector`                | Industry or business sector                     |
+| `total_laid_off`        | Employees laid off                              |
+| `percentage_laid_off`   | Workforce percentage affected                   |
+| `location`              | Company location                                |
+| `stage`                 | Company stage (Startup, Series C, Public, etc.) |
+| `funds_raised_millions` | Total funds raised in USD millions              |
+
+---
+
+## 🧽 Data Cleaning Process 
+
+Key cleaning operations performed:
+
+1. Removed null, duplicate, and inconsistent records.
+2. Standardized date format (`YYYY-MM-DD`).
+3. Trimmed whitespaces and fixed casing for text columns.
+4. Replaced blank `percentage_laid_off` with `NULL`.
+5. Converted `funds_raised_millions` to numeric data type.
+6. Created a **cleaned table** for analysis.
 
 ---
 
 ## 🔍 Exploratory Data Analysis (EDA)
 
-Key analyses performed:
-- Total layoffs per **year**, **country**, and **sector**.  
-- Top companies with the **highest layoffs**.  
-- Monthly trends in layoffs from 2020–2023.  
-- Correlation between **funding stage** and **layoff severity**.  
-- Distribution of layoffs by **continent** and **industry sector**.
+Executed directly in MySQL using `GROUP BY`, `JOIN`, `WINDOW FUNCTIONS`, and `CTEs` to explore:
+
+* Monthly and yearly layoff trends
+* Top companies with highest layoffs
+* Layoffs by **country**, **sector**, and **stage**
+* Correlation between **funds raised** and **layoffs**
+* Average layoff percentage per sector
 
 ---
 
-## 🧾 Files in This Repository
+## 📈 Key Insights
 
-| File | Description |
-|------|--------------|
-| `data-cleaning-and-eda-project.mysql` | Main SQL script containing all data cleaning and EDA queries |
-| `LICENSE` | MIT License for open-source use |
-| `README.md` | Project overview and documentation |
+* Peak layoffs occurred in **mid-2020** and **early 2023**.
+* **Tech** and **consumer-services** sectors were hit hardest.
+* Startups in **late-funding stages** had higher layoff rates.
+* Some highly funded firms still made massive cuts — funding ≠ stability.
 
 ---
 
-## 🚀 How to Run
+## 💻 Usage
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Aadityavarier/data-cleaning-and-eda-project.git
-   cd data-cleaning-and-eda-project
+### 🔧 Requirements
+
+* **MySQL 8.0+**
+* Any SQL client (MySQL Workbench / CLI)
+* Raw dataset: `raw_layoffs.xlsx`
+
+### ▶️ Steps to Run
+
+1. **Clone this repository**
+
+    ```bash
+    git clone https://github.com/Aadityavarier/data-cleaning-and-eda-project.git
+    cd data-cleaning-and-eda-project
+    ```
+
+2. **Convert Excel file to CSV for MySQL import (if needed)**
+
+    - Open `raw_layoffs.xlsx` and save/export as `raw_layoffs.csv`.
+
+3. **Import the raw dataset into MySQL**
+
+    ```sql
+    LOAD DATA INFILE 'path_to/raw_layoffs.csv'
+    INTO TABLE layoffs_staging2
+    FIELDS TERMINATED BY ',' 
+    IGNORE 1 ROWS;
+    ```
+
+4. **Run the SQL script**
+
+    ```bash
+    mysql -u root -p < "data_cleaning_and_eda_project.sql"
+    ```
+
+5. **Explore outputs and insights using SELECT statements or visualization tools.**
+
+---
+
+## 🧾 Example Queries
+
+```sql
+-- 1. Top 5 companies with highest layoffs
+SELECT company, SUM(total_laid_off) AS total
+FROM layoffs_staging2
+GROUP BY company
+ORDER BY total DESC
+LIMIT 5;
+
+-- 2. Monthly layoffs trend
+SELECT DATE_FORMAT(date, '%Y-%m') AS month,
+       SUM(total_laid_off) AS total
+FROM layoffs_staging2
+GROUP BY month
+ORDER BY month;
+```
+
+---
+
+## 🗂️ Repository Structure
+
+```
+📁 data-cleaning-and-eda-project/
+│
+├── 📄 raw_layoffs.xlsx               # Original dataset (Excel)
+├── 📄 data_cleaning_and_eda_project.sql  # MySQL cleaning + EDA queries
+├── 📄 LICENSE                        # MIT License
+└── 📄 README.md                      # Project documentation
+```
+
+---
+
+## 🚀 Future Improvements
+
+* Add visualizations using Power BI or Tableau.
+* Automate loading & analysis with Python scripts.
+* Expand dataset for 2024–2025 trend study.
+
+---
+
+## 🤝 Contributing
+
+Contributions and suggestions are welcome!
+
+1. Fork the repo.
+2. Create a feature branch.
+3. Submit a pull request.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👤 Author & Contact
+
+**Aaditya V**  
+B.E. in AI & Data Science (2nd Year) — Mumbai University  
+- Email: aadityav1703@gmail.com  
+- LinkedIn: [aadityavarier](https://www.linkedin.com/in/aaditya-varier-91486b352/)
+- GitHub: [Aadityavarier](https://github.com/Aadityavarier)
