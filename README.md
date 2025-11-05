@@ -171,7 +171,7 @@ ORDER BY month;
 
 ![Monthly_Layoffs](Visuals/Monthly_layoffs.jpg)
 
-**To see more go to ([Visuals](https://github.com/Aadityavarier/Data-Cleaning-and-EDA/tree/main/Visuals))**
+**To see more go to (Visuals(https://github.com/Aadityavarier/Data-Cleaning-and-EDA/tree/main/Visuals))**
 
 ---
 
