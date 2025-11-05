@@ -165,8 +165,8 @@ ORDER BY month;
 
 ![Yearly_Layoffs](Visuals/Yearly_layoffs.jpg)
 ![Countrywise_Layoffs](Visuals/Countrywise_layoffs.jpg)
-![Monthly_Layoffs](Visuals/Monthly_layoffs.jpg)
-![Companywise_Layoffs](Visuals/Companywise_layoffs.jpg)
+
+**To see more go to (Visuals)
 
 ---
 
