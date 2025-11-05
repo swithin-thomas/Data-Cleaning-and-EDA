@@ -166,7 +166,7 @@ ORDER BY month;
 ![Yearly_Layoffs](Visuals/Yearly_layoffs.jpg)
 ![Countrywise_Layoffs](Visuals/Countrywise_layoffs.jpg)
 
-**To see more go to (Visuals)
+**To see more go to ([Visuals](https://github.com/Aadityavarier/Data-Cleaning-and-EDA/tree/main/Visuals))
 
 ---
 
